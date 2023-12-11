@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <EditText
         android:id="@+id/etUsuario"
@@ -37,5 +37,17 @@
         android:textColor="#FF0000"
         android:layout_below="@id/btnLogin"
         android:layout_marginTop="16dp"/>
+
+
+    <TextView
+        android:id="@+id/tvCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Não tem uma conta? Cadastre-se aqui"
+        android:textColor="#2196F3"
+        android:layout_below="@id/tvErro"
+        android:layout_marginTop="16dp"
+        android:clickable="true"/>
+
 
 </RelativeLayout>

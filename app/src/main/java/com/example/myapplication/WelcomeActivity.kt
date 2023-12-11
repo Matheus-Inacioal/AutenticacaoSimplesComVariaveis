@@ -15,6 +15,6 @@ class WelcomeActivity : AppCompatActivity() {
         tvMensagemBoasVindas = findViewById(R.id.tvMensagemBoasVindas)
 
         val nomeUsuario = intent.getStringExtra("nomeUsuario")
-        tvMensagemBoasVindas.text = "Bem-vindo, $nomeUsuario!"
+        tvMensagemBoasVindas.text = "Bem-vindo(a), $nomeUsuario!"
     }
 }

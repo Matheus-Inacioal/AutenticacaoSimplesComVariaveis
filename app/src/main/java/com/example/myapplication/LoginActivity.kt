@@ -7,12 +7,13 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private lateinit var etUsuario: EditText
     private lateinit var etSenha: EditText
     private lateinit var btnLogin: Button
     private lateinit var tvErro: TextView
+    private lateinit var tvCadastro: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         etSenha = findViewById(R.id.etSenha)
         btnLogin = findViewById(R.id.btnLogin)
         tvErro = findViewById(R.id.tvErro)
+        tvCadastro = findViewById(R.id.tvCadastro)
 
         btnLogin.setOnClickListener {
             val nomeUsuario = etUsuario.text.toString()
@@ -35,11 +37,18 @@ class MainActivity : AppCompatActivity() {
                 tvErro.text = "Credenciais inválidas"
             }
         }
+
+        // Configurar o OnClickListener para o TextView de cadastro
+        tvCadastro.setOnClickListener {
+            val intent = Intent(this, CadastroActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun validarCredenciais(nomeUsuario: String, senha: String): Boolean {
-        val usuarioCorreto = "exemplo"
-        val senhaCorreta = "senha123"
-        return nomeUsuario == usuarioCorreto && senha == senhaCorreta
+        // Verificar as credenciais cadastradas
+        return nomeUsuario == CadastroActivity.CredenciaisArmazenadas.nomeUsuario && senha == CadastroActivity.CredenciaisArmazenadas.senha
     }
 }
+
+
